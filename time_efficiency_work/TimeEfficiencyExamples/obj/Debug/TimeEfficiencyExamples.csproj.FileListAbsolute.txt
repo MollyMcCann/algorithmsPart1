@@ -1,0 +1,7 @@
+E:\algorithms\sat oct 5\TimeEfficiencyExamples\TimeEfficiencyExamples\bin\Debug\TimeEfficiencyExamples.exe.config
+E:\algorithms\sat oct 5\TimeEfficiencyExamples\TimeEfficiencyExamples\bin\Debug\TimeEfficiencyExamples.exe
+E:\algorithms\sat oct 5\TimeEfficiencyExamples\TimeEfficiencyExamples\bin\Debug\TimeEfficiencyExamples.pdb
+E:\algorithms\sat oct 5\TimeEfficiencyExamples\TimeEfficiencyExamples\obj\Debug\TimeEfficiencyExamples.csprojAssemblyReference.cache
+E:\algorithms\sat oct 5\TimeEfficiencyExamples\TimeEfficiencyExamples\obj\Debug\TimeEfficiencyExamples.csproj.CoreCompileInputs.cache
+E:\algorithms\sat oct 5\TimeEfficiencyExamples\TimeEfficiencyExamples\obj\Debug\TimeEfficiencyExamples.exe
+E:\algorithms\sat oct 5\TimeEfficiencyExamples\TimeEfficiencyExamples\obj\Debug\TimeEfficiencyExamples.pdb
