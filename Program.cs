@@ -1,63 +1,104 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
-using System.Collections;
+//using System.Diagnostics;
 
-namespace LinkedList_Algorithm
+namespace Selection_Insertion_Sorts
 {
     class Program
     {
         static void Main(string[] args)
         {
-            MyDoublyLinkedList list1 = new MyDoublyLinkedList();
-            MyDoublyLinkedList list2 = new MyDoublyLinkedList();
+            //test the selection sort
+            int[] array1 = { 20, 6, 12, 8, 3, 19, 25, 15 };
+            Console.WriteLine("array1 before sorting:");
+            Display(array1);
+            //selection sort
+            SelectionSort(array1);
+            Console.WriteLine("\narray1 after Selection sorting:");
+            Display(array1);
 
-            list1.AddLast("Mike");
-            list1.AddLast("James");
-            list1.AddLast("Robert");
-            list1.AddLast("Kyle");
-            list1.AddLast("Tim");
+            //test the insertion sort algorithm
+            int[] array2 = { 20, 6, 12, 8, 3, 19, 25, 15 };
+            Console.WriteLine("\n\n\narray2 before sorting;");
+            Display(array2);
+            //insertionSort
+            InsertionSort(array2);
+            Console.WriteLine("\narray2 After insertion sorting");
+            Display(array2);
 
-            list2.AddLast("Sandra");
-            list2.AddLast("Michelle");
-            list2.AddLast("Karen");
-            //display both lists
-            Console.WriteLine("list1:");
-            Display(list1);
-            Console.WriteLine("list2:");
-            Display(list2);
-            // add more here you are missing a lot
             Console.ReadLine();
-
-            //apply the merge
-            MyDoublyLinkedList list = MyDoublyLinkedList.Merge(list1, list2);
-
-
         }
-        static void Display(MyDoublyLinkedList list)
+        static void Display(int[] array)
         {
-            foreach(object data in list)
+            foreach (int x in array)
             {
-                Console.Write($"{data} -->");
+                Console.WriteLine($"{x} ");
+
             }
-            Console.WriteLine("null");
+            Console.WriteLine();
+        }
+        //selection sort:
+        //1.start at pointer index 1 set to 0 
+        // 2.search for the min value from  i to end
+        //3.swap minvalue with value at i
+        // 4, increment i and repeat previous steps 
+        static void SelectionSort(int[] array)
+        {
+            int n = array.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                int minIndex = i;
+                // int minValue = array[i];
+
+                for (int j = i; j < n; j++)//search for min
+                {
+                    if (array[j] < array[minIndex])
+                        minIndex = j;
+                }
+                // swap at minIndex with value at i
+                int temp = array[i];
+                array[i] = array[minIndex];
+                array[minIndex] = temp;
+
+            }
+
+        }
+        static void InsertionSort(int [] array)
+        {
+            int n = array.Length;
+            //outer loop moves the pointer index
+            for (int i = 1; i< n; i++)
+            {
+                int j = i;
+
+                int temp = array[i];
+
+                while(j>0 && temp < array[j - 1])
+                {
+                    array[j] = array[j - 1];
+                    j--;
+                }
+                array[j] =temp;
+            }
         }
 
-        public static bool Update(object oldData,object newData)
-        {
-            //get node that holds oldData
-            //if found set its Data to newData,Return true
-            //otherwise return false
-            //use find method
-            
-        }
     }
 }
 
+//insertion sort
+//divide the array into 2 parts the left and the right part
+//the left begings with ones element at array[0]
+//the right starts out eith the rest of the elementd
+// start pointer at index i at 1
+//the idea is to insert the value at i into the left part while 
+// keeping the left always sorted 
+//we move elements from the right side to the left at their sorted
+//positions
+//repeat process in the right part
 
-///homework
-///add a method Update (object olddata, object new data)
-///this method search for a node with the given old data and replace it with new data
-///otherwise return false if  not found or choose to throw and exception if not found
-///
-//add a methor rotate(int count)// left to right in circular motion  as many times as indecated by ther count
+
+    //outer loop moves the pointer index from 1 to end
+    
